@@ -19,7 +19,7 @@ mkdir ~/.keras/datasets
 fi
 
 echo "Moving data to folder"
-cp -R /mnt/s3/"$COPYTOFILE"/cifar-10-python.tar.gz ~/.keras/datasets/
-tar -C ~/.keras/datasets/  -xvzf ~/.keras/datasets/cifar-10-python.tar.gz
+cp -R /mnt/s3/"$COPYTOFILE"/cifar-10-python.tar.gz ~/.keras/datasets/cifar-10-batches-py.tar.gz
+tar -C ~/.keras/datasets/  -xvzf ~/.keras/datasets/cifar-10-batches-py.tar.gz
 echo "Finished moving data"
 
