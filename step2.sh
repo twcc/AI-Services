@@ -18,10 +18,10 @@ do
    fi
 done
 
-#if [ ! -d "/mnt/s3/$COPYTOFILE/weights/" ]; then
-#echo "Creating weight folder"
-#mkdir /mnt/s3/"$COPYTOFILE"/weights/
-#fi
+if [ ! -d "/mnt/s3/$COPYTOFILE/weights/" ]; then
+echo "Creating weight folder"
+mkdir /mnt/s3/"$COPYTOFILE"/weights/
+fi
 
 cd inceptionv3/
 sudo pip install -r requirements.txt >> install.log 
