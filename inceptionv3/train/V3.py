@@ -31,16 +31,13 @@ def cli():
 @click.option('--image_size','ims',default = 139,help ="Change the dimension of the input image.")
 @click.option('--batch','bas',default = 62,help ="Set how many images per batch during training.")
 @click.option('--epoch','epc',default = 10,help ="Set how many times loop through the model before end of the training.")
-@click.option('--path','save_path',default = './weights/',help="Set the path to save weights")
-def start_training(tn,vn,ims,bas,epc,save_path):
+def start_training(tn,vn,ims,bas,epc):
     
     training_num = tn 
     validation_num = vn 
     image_size = ims
     batch_size = bas
     epochs = epc
-    save_path = save_path
-    print(">>>>>",save_path)
 
     WEIGHTS_FOLDER = './weights/'
     #WEIGHTS_FOLDER = save_path
