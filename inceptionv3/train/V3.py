@@ -4,6 +4,7 @@ from tensorflow.python.keras.datasets import cifar10
 from tensorflow.python.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.python.keras.applications.inception_v3 import *
 from tensorflow.python.keras.optimizers import SGD
+from tensorflow.python.keras.callbacks import ModelCheckpoint
 from sklearn.preprocessing import OneHotEncoder
 from fun.NCHC_CallBack_Function import NCHC_CallBack
 from fun.util import helpResize 
@@ -28,7 +29,7 @@ def cli():
 @click.option('--validation_num','vn',default = 1000,help ="The total number of images will be used for validation.")
 @click.option('--image_size','ims',default = 139,help ="Change the dimension of the input image.")
 @click.option('--batch','bas',default = 62,help ="Set how many images per batch during training.")
-@click.option('--epoch','epc',default = 100,help ="Set how many times loop through the model before end of the training.")
+@click.option('--epoch','epc',default = 1,help ="Set how many times loop through the model before end of the training.")
 def start_training(tn,vn,ims,bas,epc):
     
     training_num = tn 
