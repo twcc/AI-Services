@@ -1,6 +1,6 @@
 #!/bin/bash
 ar=($@)
-EPOCH=3
+EPOCH=100
 BATCH=45
 for arg in "${!ar[@]}"
 do
