@@ -29,13 +29,13 @@ echo "--------------------"
 echo "----- Training -----"
 echo "--------------------"
 
-EPOCH=100
+EPOCH=10
 BATCH=45
 
-if [ ! -d "/mnt/s3/$COPYTOFILE/weights/" ]; then
-echo "Creating weight folder"
-mkdir /mnt/s3/"$COPYTOFILE"/weights/
-fi
+#if [ ! -d "/mnt/s3/$COPYTOFILE/weights/" ]; then
+#echo "Creating weight folder"
+#mkdir /mnt/s3/"$COPYTOFILE"/weights/
+#fi
 
 cd inceptionv3/
 sudo pip install -r requirements.txt >> install.log
@@ -44,6 +44,6 @@ cd train/
 
 python V3.py start-training --batch $BATCH --epoch $EPOCH
 
-cp -R ./weights /mnt/s3/"$COPYTOFILE"/weights
+cp -R ./weights /mnt/s3/"$COPYTOFILE"/
 
 echo "Finished Training"
