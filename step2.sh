@@ -28,7 +28,6 @@ sudo pip install -r requirements.txt >> install.log
 
 cd train/
 
-echo "/mnt/s3/$COPYTOFILE/" 
 python V3.py start-training --batch $BATCH --epoch $EPOCH 
 
 cp -R ./weights /mnt/s3/"$COPYTOFILE"/weights
