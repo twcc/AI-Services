@@ -1,8 +1,3 @@
----
-title: TWCC Tutorial
-tags: TWCC
----
-
 # TWCC Container Service Tutorial 
 以下為兩個使用TWCC Container 的教學：
 1. GPU Burn
