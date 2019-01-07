@@ -98,7 +98,7 @@ tags: ReadMe.md
 3. 輸入以下指令，會將GPU_Burn程式下載下來並開始進行GPU。<br>
  `bash gpu_testing.sh` 
  
-4. 當看到以下訊息表示已測試完畢
+4. 當看到以下訊息表示已測試完畢<br>
 ![image alt](https://snag.gy/l3Q6m7.jpg)
 
 ---------------------------------------------
