@@ -138,7 +138,7 @@ def start_training(tn,vn,ims,bas,epc):
                     workers=4)
     
     K.clear_session()
-     
+    del model
 
 cli.add_command(start_training)
 if __name__ == "__main__":
