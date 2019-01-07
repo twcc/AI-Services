@@ -29,7 +29,7 @@ echo "--------------------"
 echo "----- Training -----"
 echo "--------------------"
 
-EPOCH=10
+EPOCH=100
 BATCH=45
 
 #if [ ! -d "/mnt/s3/$COPYTOFILE/weights/" ]; then
