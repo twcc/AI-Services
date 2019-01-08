@@ -1,0 +1,6 @@
+scikit-image
+scikit-learn
+h5py
+requests
+click
+flask
