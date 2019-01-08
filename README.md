@@ -104,7 +104,7 @@
 2. 輸入以下指令，會將GPU_Burn程式下載下來並開始進行GPU。<br>
  `bash gpu_testing.sh` 
  
-3. 當看到以下訊息表示已測試完畢
+3. 當看到以下訊息表示已測試完畢<br>
 ![image alt](https://snag.gy/l3Q6m7.jpg)
 
 ---------------------------------------------
@@ -179,8 +179,8 @@
  4. 開啟瀏覽器，並輸入以下網址可開始使用AI Inference 的服務。<br>
  `localhost:5000`
   
-    看到以下畫面即可選擇要進行預測的圖片並上傳
+    看到以下畫面即可選擇要進行預測的圖片並上傳<br>
  ![image alt](https://snag.gy/vQTej5.jpg)
  
- 5. 預測的結果將顯示在瀏覽器上。
+ 5. 預測的結果將顯示在瀏覽器上。<br>
  ![image alt](https://snag.gy/gbR1vJ.jpg)
