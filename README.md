@@ -1,8 +1,3 @@
----
-title: TWCC Tutorial
-tags: ReadMe.md
----
-
 # TWCC Container Service Tutorials
 以下為一系列使用TWCC 建立GPGPU Container 執行運算工作的教學：
 
