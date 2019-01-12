@@ -38,7 +38,7 @@ python tensorflow_synthetic_benchmark.py
 ### run w/ mpi 
 for 1 GPU
 ```
-/usr/local/mpi/bin/mpirun -np 8 -H localhost:8 python tensorflow_synthetic_benchmark.py
+/usr/local/mpi/bin/mpirun -np 1 -H localhost:1 python tensorflow_synthetic_benchmark.py
 ```
 for 8 GPU
 ```
