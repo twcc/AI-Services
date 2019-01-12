@@ -32,7 +32,8 @@ try
 python tensorflow_synthetic_benchmark.py
 ```
 
-* NOTE: hvd.Compression.fp16 not work in this source code, just skip!
+* NOTE: hvd.Compression.fp16 not work in this source code, just skip line:59 ! like this...
+![img](https://snag.gy/qevcXm.jpg)
 
 ### run w/ mpi
 ```
