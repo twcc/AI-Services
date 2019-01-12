@@ -8,6 +8,7 @@ presentation:https://drive.google.com/open?id=1jJdUZRT7IV_4WxfBqyrNg4jkv9XsBi7oc
 git clone https://github.com/reedwm/benchmarks
 cd benchmarks
 git checkout num_steps_issue_1.10
+cd scripts/tf_cnn_benchmarks/
 ```
 
 ### gpu:1 batch:32
