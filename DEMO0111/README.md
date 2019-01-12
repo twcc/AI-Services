@@ -35,7 +35,12 @@ python tensorflow_synthetic_benchmark.py
 * NOTE: hvd.Compression.fp16 not work in this source code, just skip line:59 ! like this...
 ![img](https://snag.gy/qevcXm.jpg)
 
-### run w/ mpi
+### run w/ mpi 
+for 1 GPU
+```
+mpirun -np 8 -H localhost:8 python tensorflow_synthetic_benchmark.py
+```
+for 8 GPU
 ```
 mpirun -np 8 -H localhost:8 python tensorflow_synthetic_benchmark.py
 ```
