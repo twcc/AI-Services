@@ -1,5 +1,8 @@
 # github clone 
 
+excel: https://docs.google.com/spreadsheets/d/10D_sx9bpKWZLHDb-Po7j_R4wqSqK68AjhnH1t2UZKjo/edit?usp=sharing
+presentation:https://drive.google.com/open?id=1jJdUZRT7IV_4WxfBqyrNg4jkv9XsBi7ocwJPhyUvBy0
+
 ## Task1: LeaderGPU
 ```
 git clone https://github.com/reedwm/benchmarks
