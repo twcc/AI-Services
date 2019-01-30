@@ -1,4 +1,11 @@
-# github clone 
+# Env. check
+
+1. Nvidia Driver version: `nvidia-smi`, `nvidia-smi topo --matrix`, `nvidia-smi nvlink --status`
+2. CUDA Version: `nvcc --version`
+3. Cudnn Version: `cat /usr/lib/x86_64-linux-gnu/include/cudnn.h | grep CUDNN_MAJOR -A 2`
+
+
+# Materials 
 
 excel: https://docs.google.com/spreadsheets/d/10D_sx9bpKWZLHDb-Po7j_R4wqSqK68AjhnH1t2UZKjo/edit?usp=sharing
 presentation:https://drive.google.com/open?id=1jJdUZRT7IV_4WxfBqyrNg4jkv9XsBi7ocwJPhyUvBy0
