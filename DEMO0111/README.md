@@ -1,7 +1,7 @@
 # Env. check
 
 1. Nvidia Driver version: `nvidia-smi`, `nvidia-smi topo --matrix`, `nvidia-smi nvlink --status`
-2. CUDA Version: `nvcc --version`
+2. CUDA Version: `/usr/local/cuda-10.0/bin/nvcc --version`
 3. Cudnn Version: `cat /usr/lib/x86_64-linux-gnu/include/cudnn.h | grep CUDNN_MAJOR -A 2`
 
 
