@@ -57,7 +57,7 @@ python tensorflow_synthetic_benchmark.py
 
 * NOTE: hvd.Compression.fp16 not work in this source code, just skip line:59 ! like this...
 ![img](https://snag.gy/qevcXm.jpg)
-* this modification does NOT required in NGC tensorflow 18.12 container environment, due to Horovod has been upgraded to 0.15.1.
+* this modification does NOT required in [NGC tensorflow 18.12](https://docs.nvidia.com/deeplearning/dgx/pdf/TensorFlow-Release-Notes.pdf) container environment, due to Horovod has been upgraded to 0.15.1.
 
 ### run w/ mpi 
 for 1 GPU
