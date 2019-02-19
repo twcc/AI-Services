@@ -1,4 +1,4 @@
-# Output
+# Output Sample
 ![Sample](https://raw.githubusercontent.com/TW-NCHC/AI-Services/master/Tutorial_Benchmark/image.png)
 
 # Env. check
@@ -35,7 +35,7 @@ python tf_cnn_benchmarks.py --num_gpus=2 --batch_size=128 --model=resnet50 --var
 
 ## Task2: Tensorflow official [Resnet-50](https://www.tensorflow.org/guide/performance/benchmarks)
 
-This benchmark is using [Horovod](https://github.com/horovod/horovod) and MPI approach to do Resnet-50 training. Sample code can be retrived from [Horovod Github Project](https://github.com/uber/horovod) as following:
+This benchmark is using [Horovod](https://github.com/horovod/horovod) and [Open MPI](https://www.open-mpi.org/doc/v2.0/man1/mpirun.1.php) approach to do Resnet-50 training. Sample code can be retrived from [Horovod Github Project](https://github.com/uber/horovod) as following:
 
 ```
 git clone https://github.com/uber/horovod
