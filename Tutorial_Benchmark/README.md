@@ -1,4 +1,11 @@
-# Output Sample
+# Sample
+
+Just run it.
+
+```
+bash run.sh
+```
+
 ![Sample](https://raw.githubusercontent.com/TW-NCHC/AI-Services/master/Tutorial_Benchmark/image.png)
 
 # Env. check
