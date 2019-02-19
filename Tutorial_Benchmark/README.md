@@ -1,3 +1,6 @@
+# Output
+![Sample](https://raw.githubusercontent.com/TW-NCHC/AI-Services/master/Tutorial_Benchmark/image.png)
+
 # Env. check
 
 1. Nvidia Driver version: `nvidia-smi`, `nvidia-smi topo --matrix`, `nvidia-smi nvlink --status`
@@ -8,9 +11,11 @@
 # Materials 
 
 excel: https://docs.google.com/spreadsheets/d/10D_sx9bpKWZLHDb-Po7j_R4wqSqK68AjhnH1t2UZKjo/edit?usp=sharing
-presentation:https://drive.google.com/open?id=1jJdUZRT7IV_4WxfBqyrNg4jkv9XsBi7ocwJPhyUvBy0
 
-## Task1: LeaderGPU
+## Task1: LeaderGPU - [Resnet-50](https://www.leadergpu.com/articles/429-tensorflow-resnet-50-benchmark)
+
+This benchmark is using 'parameter server' approach to do Resnet-50 training. Sample code can be retrived from [Reedwm's Github Project](https://github.com/reedwm/benchmarks) as following:
+
 ```
 git clone https://github.com/reedwm/benchmarks
 cd benchmarks
@@ -28,13 +33,17 @@ python tf_cnn_benchmarks.py --num_gpus=1 --batch_size=32 --model=resnet50 --vari
 python tf_cnn_benchmarks.py --num_gpus=2 --batch_size=128 --model=resnet50 --variable_update=parameter_server
 ```
 
-## Task2: Tensorflow official
+## Task2: Tensorflow official [Resnet-50](https://www.tensorflow.org/guide/performance/benchmarks)
+
+This benchmark is using [Horovod](https://github.com/horovod/horovod) and MPI approach to do Resnet-50 training. Sample code can be retrived from [Horovod Github Project](https://github.com/uber/horovod) as following:
+
 ```
 git clone https://github.com/uber/horovod
 cd horovod/examples/
 ```
 
-try 
+try following code for testing.
+
 ```
 python tensorflow_synthetic_benchmark.py
 ```
