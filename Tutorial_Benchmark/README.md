@@ -1,5 +1,10 @@
 # Sample
 
+Howto
+
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/q0rn9_oxhuM/0.jpg)](http://www.youtube.com/watch?v=q0rn9_oxhuM)
+
+
 Just run it.
 
 ```
