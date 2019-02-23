@@ -1,4 +1,7 @@
-#!/bin/bash
+﻿#!/bin/bash
+# origin william@NCHC
+# modify kmo@NCHC 2019.0222 
+
 for arg in "$@"
 do
   if [ "$arg" == "--path" ] || [ "$arg" == "-p" ]
@@ -7,23 +10,35 @@ do
   fi
 done
 echo "Start Process"
-echo "Checking for fodler"
-
-if [ ! -d "~/.keras" ];then
-echo "Creating .kears"
-mkdir ~/.keras
-fi
+echo "Checking for folder"
 
 if [ ! -d "~/.keras/datasets" ]; then
-echo "Creating datasets"
-mkdir ~/.keras/datasets
+echo "Creating ~/.keras/datasets"
+mkdir -p ~/.keras/datasets
 fi
 
-echo "Moving data to folder"
-cp -R /mnt/s3/"$COPYTOFILE"/cifar-10-python.tar.gz ~/.keras/datasets/cifar-10-batches-py.tar.gz
-tar -C ~/.keras/datasets/  -xvzf ~/.keras/datasets/cifar-10-batches-py.tar.gz >> progress.log
 
-echo "Finished moving data"
+# checking s3 path exist or not
+# if s3 path not exist, try local path
+s3path=/mnt/s3/"$COPYTOFILE"
+ffpath="$COPYTOFILE"
+
+if [ -d "$s3path" ]; then
+  ffpath=$s3path
+fi
+
+echo "copy data to ~/.keras/datasets/cifar-10-batches-py.tar.gz"
+cp $ffpath/cifar-10-python.tar.gz ~/.keras/datasets/cifar-10-batches-py.tar.gz
+if [ -f ~/.keras/datasets/cifar-10-batches-py.tar.gz ]; then
+  echo "Finished copy data "
+fi
+
+echo "extract cifar-10-batches-py.tar.gz"
+tar -C ~/.keras/datasets/  -xvzf ~/.keras/datasets/cifar-10-batches-py.tar.gz > progress.log
+if [ -d ~/.keras/datasets/cifar-10-batches-py ]; then
+  echo "Finished extract data "
+fi
+
 
 echo "--------------------"
 echo "----- Training -----"
@@ -44,6 +59,5 @@ cd train/
 
 python V3.py start-training --batch $BATCH --epoch $EPOCH
 
-cp -R ./weights /mnt/s3/"$COPYTOFILE"/
-
-echo "Finished Training"
+echo "starting rsync ./weights to $ffpath"
+rsync -av --progress  ./weights $ffpath && echo "Finished Training"
