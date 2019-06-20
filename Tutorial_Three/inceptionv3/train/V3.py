@@ -134,8 +134,8 @@ def start_training(tn,vn,ims,bas,epc):
                                  batch_size=batch_size),
                     callbacks = [ histories,mc ], #added here
                     epochs=epochs,
-                    validation_data=(X_validation, Y_new_val),
-                    workers=4)
+                    validation_data=(X_validation, Y_new_val)
+                    )
     
     K.clear_session()
     del model
