@@ -32,14 +32,15 @@ echo "--------------------"
 echo "----- Download -----"
 echo "--------------------"
 # Install pipenv
-pip install -e git+https://github.com/pypa/pipenv.git@bugfix/resolver-markers#egg=pipenv
+#sudo pip install -e git+https://github.com/pypa/pipenv.git@bugfix/resolver-markers#egg=pipenv
+sudo pip install pipenv
 # Clone TWCC-CLI
 git clone https://github.com/TW-NCHC/TWCC-CLI.git
 # cd to TWCC-CLI & Install 
 cd TWCC-CLI && pipenv install
 
 echo "copy data to ~/.keras/datasets/cifar-10-batches-py.tar.gz"
-pipenv run python src/test/s3.py download -s obj0612 -d ~/.keras/datasets/ -k cifar-10-python.tar.gz
+pipenv run python src/test/s3.py download -s $COPYTOFILE -d ~/.keras/datasets/ -k cifar-10-python.tar.gz
 mv ~/.keras/datasets/cifar-10-python.tar.gz ~/.keras/datasets/cifar-10-batches-py.tar.gz
 
 echo "extract cifar-10-batches-py.tar.gz"
@@ -70,5 +71,5 @@ echo "------ Upload ------"
 echo "--------------------"
 
 cd ~/AI-Services/Tutorial_Three/TWCC-CLI
-pipenv run python src/test/s3.py upload -s ~/AI-Services/Tutorial_Three/inceptionv3/train/weights/ -d "$COPYTOFILE" -r
+pipenv run python src/test/s3.py upload -s ~/AI-Services/Tutorial_Three/inceptionv3/train/weights -d "$COPYTOFILE" -r
 
