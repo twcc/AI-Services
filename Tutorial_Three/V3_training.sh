@@ -1,6 +1,7 @@
 ﻿#!/bin/bash
 # origin william@NCHC
 # modify kmo@NCHC 2019.0222 
+# modify leo.chen@twsc.io 2021/01/12
 
 for arg in "$@"
 do
@@ -31,17 +32,13 @@ fi
 echo "--------------------"
 echo "----- Download -----"
 echo "--------------------"
-# Install pipenv
-#sudo pip install -e git+https://github.com/pypa/pipenv.git@bugfix/resolver-markers#egg=pipenv
-sudo pip install pipenv
-# Clone TWCC-CLI
-git clone https://github.com/TW-NCHC/TWCC-CLI.git
-# cd to TWCC-CLI & Install 
-cd TWCC-CLI && pipenv install
+
+cd AI-Services/Tutorial_Three
+wget https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz
 
 echo "copy data to ~/.keras/datasets/cifar-10-batches-py.tar.gz"
-pipenv run python src/test/s3.py download -s $COPYTOFILE -d ~/.keras/datasets/ -k cifar-10-python.tar.gz
-mv ~/.keras/datasets/cifar-10-python.tar.gz ~/.keras/datasets/cifar-10-batches-py.tar.gz
+#pipenv run python src/test/s3.py download -s $COPYTOFILE -d ~/.keras/datasets/ -k cifar-10-python.tar.gz
+mv ~/AI-Services/Tutorial_Three/cifar-10-python.tar.gz ~/.keras/datasets/cifar-10-batches-py.tar.gz
 
 echo "extract cifar-10-batches-py.tar.gz"
 tar -C ~/.keras/datasets/  -xvzf ~/.keras/datasets/cifar-10-batches-py.tar.gz > progress.log
@@ -70,6 +67,4 @@ echo "--------------------"
 echo "------ Upload ------"
 echo "--------------------"
 
-cd ~/AI-Services/Tutorial_Three/TWCC-CLI
-pipenv run python src/test/s3.py upload -s ~/AI-Services/Tutorial_Three/inceptionv3/train/weights -d "$COPYTOFILE" -r
 
