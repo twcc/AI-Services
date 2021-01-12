@@ -7,7 +7,7 @@ import tensorflow.python.keras.callbacks
 import time
 
 class NCHC_CallBack(tensorflow.keras.callbacks.Callback):
-    def __inint__(self):
+    def __init__(self):
         pass
     def on_train_begin(self, logs={}):
         self.aucs = []
