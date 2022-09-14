@@ -3,10 +3,10 @@ from tensorflow.python.keras.models import Model
 from tensorflow.python.keras.datasets import cifar10
 from tensorflow.python.keras.preprocessing.image import ImageDataGenerator
 from tensorflow.python.keras.applications.inception_v3 import *
-from tensorflow.python.keras.optimizers import SGD
+#from tensorflow.python.keras.optimizers import SGD
+from tensorflow.python.keras.optimizers import gradient_descent_v2
 from tensorflow.python.keras.callbacks import ModelCheckpoint
 from sklearn.preprocessing import OneHotEncoder
-from fun.NCHC_CallBack_Function import NCHC_CallBack
 from fun.util import helpResize 
 
 import numpy as np
@@ -104,7 +104,7 @@ def start_training(tn,vn,ims,bas,epc):
     model = Model(inputs=base_model.input, outputs=predictions)
     
     # Use SGD as an optimizer
-    model.compile(optimizer=SGD(lr=0.0001, momentum=0.9), 
+    model.compile(optimizer=gradient_descent_v2.SGD(lr=0.0001, momentum=0.9), 
                   loss='categorical_crossentropy',
                   metrics=['accuracy'])
 
@@ -119,9 +119,8 @@ def start_training(tn,vn,ims,bas,epc):
         horizontal_flip=True,  # randomly flip images
     )
     datagen.fit(X_train)
-    histories = NCHC_CallBack()
     c_time = "{}_{}_{}_{}_{}".format(time.localtime().tm_year,time.localtime().tm_mon,time.localtime().tm_mday,time.localtime().tm_hour,time.localtime().tm_min)
-    mc = ModelCheckpoint(WEIGHTS_FOLDER+c_time+"_weights.{epoch:02d}-acc-{acc:.2f}-loss-{loss:.2f}.hdf5",
+    mc = ModelCheckpoint(WEIGHTS_FOLDER+c_time+"_weights.{epoch:02d}-loss-{loss:.2f}.hdf5",
                          monitor='val_loss',
                          verbose=0, 
                          save_best_only=False,
@@ -132,7 +131,7 @@ def start_training(tn,vn,ims,bas,epc):
     model.fit_generator(datagen.flow(X_train, 
                                  Y_new_train,
                                  batch_size=batch_size),
-                    callbacks = [ histories,mc ], #added here
+                    callbacks = [ mc ], #added here
                     epochs=epochs,
                     validation_data=(X_validation, Y_new_val)
                     )
