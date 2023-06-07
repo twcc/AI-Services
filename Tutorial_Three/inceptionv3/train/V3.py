@@ -1,11 +1,11 @@
-from tensorflow.python.keras.layers import Dense, GlobalAveragePooling2D, Input
-from tensorflow.python.keras.models import Model
-from tensorflow.python.keras.datasets import cifar10
-from tensorflow.python.keras.preprocessing.image import ImageDataGenerator
-from tensorflow.python.keras.applications.inception_v3 import *
-#from tensorflow.python.keras.optimizers import SGD
-from tensorflow.python.keras.optimizers import gradient_descent_v2
-from tensorflow.python.keras.callbacks import ModelCheckpoint
+from tensorflow.keras.layers import Dense, GlobalAveragePooling2D, Input
+from tensorflow.keras.models import Model
+from tensorflow.keras.datasets import cifar10
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
+from tensorflow.keras.applications.inception_v3 import *
+from tensorflow.keras.optimizers import SGD
+#from tensorflow.keras.optimizers import gradient_descent_v2
+from tensorflow.keras.callbacks import ModelCheckpoint
 from sklearn.preprocessing import OneHotEncoder
 from fun.util import helpResize 
 
@@ -104,7 +104,7 @@ def start_training(tn,vn,ims,bas,epc):
     model = Model(inputs=base_model.input, outputs=predictions)
     
     # Use SGD as an optimizer
-    model.compile(optimizer=gradient_descent_v2.SGD(lr=0.0001, momentum=0.9), 
+    model.compile(optimizer=SGD(lr=0.0001, momentum=0.9), 
                   loss='categorical_crossentropy',
                   metrics=['accuracy'])
 
