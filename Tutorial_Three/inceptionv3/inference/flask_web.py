@@ -1,7 +1,7 @@
 from flask import Flask, request, redirect, url_for, flash
-from tensorflow.python.keras.preprocessing import image
-from tensorflow.python.keras.applications.inception_v3 import *
-from tensorflow.python.keras import backend as K
+from tensorflow.keras.preprocessing import image
+from tensorflow.keras.applications.inception_v3 import *
+from tensorflow.keras import backend as K
 from werkzeug.utils import secure_filename
 
 import json
